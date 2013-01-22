@@ -4,7 +4,7 @@
 
 for i in 0..10
   for j in 0..10
-    puts @grid[[i,j]]
+    puts "#{i} #{j} #{@grid[[i,j]]}"
   end
 end
 

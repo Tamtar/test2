@@ -5,21 +5,25 @@ class Map
 	def initialize
 		@x = 20
 		@y = 20
-		@grid = Array.new[@x, @y]
+    @grid = Hash.new(false)
 	end
 	def dimensions
-		return [@x, @y] 
+		return [@x, @y]
 	end
 	def set_rewards
+
 		puts @grid[0]
+
+		@grid[[5, 7]] = true
+		return true
+
 	end
 	def reward?(x, y)
-		puts @grid[5, 7]
-		# if @grid[x, y] == true
-		# 	return true
-		# else
-		# 	return false
-		# end
+		if @grid[[x, y]] == true
+			return true
+		else
+			return false
+		end
 	end
 
 end

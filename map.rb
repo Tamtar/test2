@@ -11,7 +11,7 @@ class Map
 		return [@x, @y] 
 	end
 	def set_rewards
-		@grid[5, 7] = "test"
+		puts @grid[0]
 	end
 	def reward?(x, y)
 		puts @grid[5, 7]

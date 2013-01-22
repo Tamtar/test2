@@ -16,9 +16,9 @@ class Map
 	end
 	def reward?(x, y)
 		if @grid[[x, y]] == true
-			return "true!"
+			return true
 		else
-			return "false!"
+			return false
 		end
 	end
 

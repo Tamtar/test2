@@ -17,6 +17,7 @@ class Circle
     @blob
   end
 end
+
 class TestWin < Gosu::Window
 
   def initialize
@@ -29,7 +30,5 @@ class TestWin < Gosu::Window
   end
 
 end
-
-
 
 TestWin.new.show

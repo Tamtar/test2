@@ -26,7 +26,7 @@ class Player
 				when "up"
 					puts @x_location
 					@x_location = @x_location+1
-					@x_location
+
 				when "down"
 					@x_location = @x_location-1
 				when "right"

@@ -17,7 +17,11 @@ class Monster
 	end
 
 	def take_damage(damage_taken)
-		@health = @health - (damage_taken-@armor)
+		if damage_taken > @armor
+			@health = @health - (damage_taken-@armor)
+		elsif damage_taken <= @armor
+			@health = @health
+		end
 	end
 
 	def equip(item)

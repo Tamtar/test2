@@ -1,3 +1,5 @@
+load 'Item.rb'
+
 class Monster
 	@health
 	@attack
@@ -19,10 +21,9 @@ class Monster
 	end
 
 	def equip(item)
-		case item
-		when "buckler"
-			@armor = @armor + 3
-		end
+		@health = @health + item.health
+		@armor = @armor + item.armor
+ 		@attack = @attack + item.attack
 	end
 
 	def health

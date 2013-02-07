@@ -10,8 +10,16 @@ class Monster
 	end
 
 	def attack(target)
-		# target.@health=target.@health-@attack
-		puts "attack successful"
+		target.take_damage(@attack)
+		puts "attack successful, target health: #{target.health}"
+	end
+
+	def take_damage(damage_taken)
+		@health = @health - damage_taken
+	end
+
+	def health
+		return @health
 	end
 
 end

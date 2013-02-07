@@ -1,11 +1,13 @@
 load 'Item.rb'
 
 class Monster
+	@name
 	@health
 	@attack
 	@armor
 
 	def initialize
+		@name = "Monster"
 		@health = 100
 		@attack = 5
 		@armor = 2
@@ -13,7 +15,7 @@ class Monster
 
 	def attack(target)
 		target.take_damage(@attack)
-		puts "attack successful, target health: #{target.health}"
+		puts "#{@name} attacked successfully, #{target.name} health: #{target.health}"
 	end
 
 	def take_damage(damage_taken)
@@ -32,6 +34,10 @@ class Monster
 
 	def health
 		return @health
+	end
+
+	def name
+		return @name
 	end
 
 end

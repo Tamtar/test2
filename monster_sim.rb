@@ -1,44 +1,55 @@
 load 'Monster.rb'
+load 'Hero_prototype.rb'
+load 'Yeti.rb'
 load 'Item.rb'
 load 'Buckler.rb'
 load 'Sword.rb'
+load 'Combat.rb'
+#loading classes seems kind of bulky, especially when I need most of these classes
+#in most of my classes (monster, item, etc). Is there a better way to do this?
 
-monster_1 = Monster.new
-monster_2 = Monster.new
+hero_1 = Hero_prototype.new
+yeti_1 = Yeti.new
+
+
 buckler_1 = Buckler.new
 sword_1 = Sword.new
+combat = Combat.new
 
 
 player = "alive"
-puts "Welcome to the Game"
+puts "Welcome to The Game"
 puts "Input name"
 name = gets.chomp
-while player == "alive"
-	puts "Hello #{name}, to attack a monster type a, to equip a sword type s, to equip a buckler type b"
-	action = gets.chomp
-	case action
-	when 'a'
-		monster_1.attack(monster_2)
-		monster_2.attack(monster_1)
-	when 's'
-		puts "You equip a sword"
-		monster_1.equip(sword_1)
-		monster_2.attack(monster_1)
-	when 'b'
-		puts "You equip a buckler"
-		monster_1.equip(buckler_1)
-		monster_2.attack(monster_1)
-	else
-		"that is an invalid command"
-	end
-	if monster_1.health < 1
-		puts "you die"
-		player = "dead"
-	elsif monster_2.health < 1
-		puts "you win!"
-		player = "winner"
-	end
-end
-monster_1.attack(monster_2)
-
-$end
+combat.battle(hero_1, yeti_1)
+# while player == "alive"
+# 	puts "Hello #{name}, to attack a monster type a, to equip a sword type s, to equip a buckler type b"
+# 	action = gets.chomp
+# 	case action
+# 	when 'a'
+# 		hero_1.attack(yeti_1)
+# 		yeti_1.attack(hero_1)
+# 	when 's'
+# 		puts "You equip a sword"
+# 		hero_1.equip(sword_1)
+# 		yeti_1.attack(hero_1)
+# 	when 'b'
+# 		puts "You equip a buckler"
+# 		hero_1.equip(buckler_1)
+# 		yeti_1.attack(hero_1)
+# 	when 'r'
+# 		puts "You use reckless strike!"
+# 		hero_1.reckless_strike(yeti_1)
+# 		yeti_1.attack(hero_1)
+		
+# 	else
+# 		"that is an invalid command"
+# 	end
+# 	if hero_1.health < 1
+# 		puts "you die"
+# 		player = "dead"
+# 	elsif yeti_1.health < 1
+# 		puts "you win!"
+# 		player = "winner"
+# 	end
+# end

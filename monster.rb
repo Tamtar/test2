@@ -15,7 +15,14 @@ class Monster
 	end
 
 	def take_damage(damage_taken)
-		@health = @health - damage_taken
+		@health = @health - (damage_taken-@armor)
+	end
+
+	def equip(item)
+		case item
+		when "buckler"
+			@armor = @armor + 3
+		end
 	end
 
 	def health

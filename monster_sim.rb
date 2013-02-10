@@ -5,19 +5,56 @@ load 'Item.rb'
 load 'Buckler.rb'
 load 'Sword.rb'
 load 'Combat.rb'
+
 #loading classes seems kind of bulky, especially when I need most of these classes
 #in most of my classes (monster, item, etc). Is there a better way to do this?
 # YOU CAN PUT THEM ALL IN ONE FILE. DOESN'T HAVE TO BE SEPERATE FILES.
 # OR PUT RELATED ONES TOGETHER.
 # MAYBE UNITS.RB AND EQUIPMENT.RB OR SOMETHING LIKE THAT.
-
-hero_1 = Hero_prototype.new
+combat = Combat.new
 yeti_1 = Yeti.new
-
 
 buckler_1 = Buckler.new
 sword_1 = Sword.new
-combat = Combat.new
+map = Map.new
+hero_1 = HeroPrototype.new map
+
+
+done = false
+while !done
+  puts "enter n, s, e, w or a"
+  input = gets.chomp
+  case input
+  when 's'
+    result = hero_1.move(:south)
+    puts "#{result} here."
+    if result == :monster
+      combat.battle(hero_1, yeti_1)
+    end
+  when 'n'
+    result = hero_1.move(:north)
+    puts "#{result} here."
+    if result == :monster
+      combat.battle(hero_1, yeti_1)
+    end
+  when 'e'
+    result = hero_1.move(:east)
+    puts "#{result} here."
+    if result == :monster
+      combat.battle(hero_1, yeti_1)
+    end
+  when 'w'
+    result = hero_1.move(:west)
+    puts "#{result} here."
+    if result == :monster
+      combat.battle(hero_1, yeti_1)
+    end
+  when 'a'
+  else
+    puts "typed in something bogus."
+  end
+end
+
 
 
 player = "alive"

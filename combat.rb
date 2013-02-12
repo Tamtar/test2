@@ -13,7 +13,8 @@ class Combat
 		#AND YEAH. HAVE A GENERATE ITEMS METHOD FOR THE PLAYER. AND/OR HAVE EQUIPMENT CLASS THAT IS PART OF PLAYER.
 		buckler_1 = Buckler.new
 		sword_1 = Sword.new
-
+    	combat = Combat.new
+    	
 		status = "alive"
 		while status == "alive"
 			puts "To attack a monster type 'a', to view inventory type 'i', to view special abilities type 'sp' "

@@ -1,3 +1,4 @@
+# load 'Combat.rb'
 class Map
   def initialize
     @grid = Hash.new(false)
@@ -30,6 +31,10 @@ class Map
       @current_x-=1
       @current_position = [@current_x, @current_y]
     end
+        puts "#{@grid[@current_position]} here. Current location #{my_position?}"
+        if @grid[@current_position] == :monster
+            # combat.battle(hero_1, yeti_1)
+        end
     return @grid[@current_position]
   end
 end

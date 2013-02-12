@@ -21,7 +21,7 @@ class HeroPrototype < Monster
 		result # retursn either nil, :treasure or :monster
 	end
 	def reckless_strike(target)
-		puts "@name used reckless strik successfully, #{target.name} health: #{target.health}"
+		puts "@name used reckless strike successfully, #{target.name} health: #{target.health}"
 		target.take_damage(@attack*2)
 		take_damage(@attack)
 	end
